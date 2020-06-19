@@ -1,0 +1,12 @@
+{
+    "name": "Drivers",
+    "keywords": "drivers, esp8266, xbee, zigbee",
+    "description": "Drivers for esp8266 and xbee",
+    "frameworks": "arduino",
+    "platforms": [
+        "espressif8266"
+    ],
+    "dependencies": {
+        "ESP8266WiFi" : 1.0
+    }
+}
