@@ -11,9 +11,21 @@ public:
     void operator=(MqttDriver const &) = delete;
     ~MqttDriver() = default;
 
+    //Connect to the MQTT broker for sending only.
+    //Uses credentials specified in Utils/constants.h
     void connect_send();
+
+    //Connect to the MQTT broker for receiving only.
+    //Uses credentials specified in Utils/constants.h
+    //The specified callback is called when a MQTT message is received.
     void connect_receive(const std::string topic, void mqtt_callback(char *, uint8_t *, unsigned int));
+
+    //Publish a message on the specified topic.
+    //Returns publish status
     const bool publish(const std::string topic, const char *json);
+
+    //Loops the mqtt driver and checks connected status.
+    //This ensures continuous operation of the MQTT driver.
     void loop();
 
 private:

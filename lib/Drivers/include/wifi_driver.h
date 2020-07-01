@@ -6,6 +6,8 @@ public:
     WifiDriver(WifiDriver const &) = delete;
     void operator=(WifiDriver const &) = delete;
     ~WifiDriver() = default;
+
+    //Connect to WiFi using the credentials specified in Utils/constants.h
     void connect();
 
 private:

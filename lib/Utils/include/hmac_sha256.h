@@ -13,6 +13,8 @@ inline void calculate_hmac_sha256(const char *key, uint8_t *hash_array, const Me
     sha.clear();
 }
 
+//Check the message hash against the calculated hash.
+//Returns true when message hash matches calculated hash.
 inline bool is_hmac_sha256_valid(const char *key, uint8_t *original_hash, const MessageData *data)
 {
     uint8_t new_hash[HASH_SIZE_BYTES];
